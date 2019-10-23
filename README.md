@@ -20,8 +20,8 @@ Navigate to `http://localhost:4200/`.
 8. Shopping cart displays and updates total amount based on items quantity and price.
 
 ## Dependencies
-Element design: Material Design for Bootstrap (Angular version) : https://mdbootstrap.com/docs/angular/ 
-Pagination: ngx-pagination: solution for pagination in Angular : https://www.npmjs.com/package/ngx-pagination 
+- Element design: Material Design for Bootstrap (Angular version) : https://mdbootstrap.com/docs/angular/ 
+- Pagination: ngx-pagination: solution for pagination in Angular : https://www.npmjs.com/package/ngx-pagination 
 
 
 
