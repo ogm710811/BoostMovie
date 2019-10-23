@@ -1,0 +1,37 @@
+.card__image--fluid {
+  max-width: 50%;
+  height: auto;
+}
+
+.row__pagination--margin {
+  margin-top: 1rem;
+}
+
+.my-pagination ::ng-deep .ngx-pagination .current .pagination-next {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.my-pagination ::ng-deep .pagination-next {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.my-pagination ::ng-deep .pagination-previous {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+a {
+  color: black;
+}
+
+.isDisabled {
+  color: currentColor;
+  cursor: not-allowed;
+  opacity: 0.5;
+  text-decoration: none;
+}

@@ -1,0 +1,49 @@
+<nav class="navbar navbar-dark default-color justify-content-start"
+     xmlns="http://www.w3.org/1999/html">
+  <a class="navbar-brand mr-5" href="#">
+    <img src="../assets/images/logo-default.png" height="30" alt="app logo">
+  </a>
+  <form class="form-inline my-2 my-lg-0 mr-auto">
+    <input class="form-control" type="search" placeholder="Search" aria-label="Search" (keyup)='onMovieSearch($event.target?.value)'  (click)="clearFilter($event); ">
+  </form>
+  <div class="row no-gutters justify-content-end">
+    <div class="col-auto pr-4">
+      <span class="align-middle">
+        <small>
+          <strong>{{cartService.numberOfItemsInCart}}</strong>
+          items
+        </small>
+      </span>
+    </div>
+    <div class="col-auto">
+      <a [ngClass]="{'isDisabled' : cartService.numberOfItemsInCart === 0}" [routerLink]="['shopping-cart']">
+        <i class="fas fa-shopping-cart fa-2x"></i>
+      </a>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="row mt-2">
+    <div *ngFor="let i of movies | async | paginate: config" class="col-sm-3 mb-3 mb-md-0 pb-2">
+      <div class="card w-100 text-center border-info">
+        <div class="card-header">
+          <img class="card__image--fluid" src="../assets/images/movie_2.jpg" alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <h6 class="card-title"><a class="cyan-text" [routerLink]="['movie', i.id]">{{i.title}}</a></h6>
+          <p class="card-text">{{i.price | currency}}</p>
+        </div>
+        <div class="card-footer text-muted">
+          <app-quantity-form [movie]="i"></app-quantity-form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-sm-12">
+      <div class="alert alert-info pb-0 d-flex justify-content-center" role="alert">
+        <pagination-controls (pageChange)="pageChange($event)" class="my-pagination"></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>

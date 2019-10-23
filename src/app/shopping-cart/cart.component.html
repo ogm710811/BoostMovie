@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="row no-gutters">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <h3 class="card-header text-center font-weight-bold text-uppercase py-4">BoostMovie Shopping Car</h3>
+        <div class="card-body">
+          <div id="table" class="table-editable">
+            <table class="table table-bordered table-responsive-md table-striped text-center">
+              <tr>
+                <th class="text-center">Movie Title</th>
+                <th class="text-center">Price</th>
+                <th class="text-center">QTY</th>
+                <th class="text-center">Amount</th>
+                <th class="text-center">Remove</th>
+              </tr>
+              <tr *ngFor="let movie of movieList; let id = index">
+                <td>{{movie.title}}</td>
+                <td>{{movie.price | currency}}</td>
+                <td>
+                  <span contenteditable="true" (blur)="updateQuantity(movie.id, 'quantity', $event)">
+                    {{movie.quantity}}
+                  </span>
+                </td>
+                <td>{{(movie.quantity * movie.price) | currency}}</td>
+                <td>
+                  <span class="table-remove">
+                    <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Remove</button>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 offset-md-3 text-right">
+      <div class="alert alert-info" role="alert">
+        Total Amount: <span class="red-text">{{displayTotalAmount | currency}}</span>
+      </div>
+    </div>
+    <div class="col-md-6 offset-md-3 text-center">
+      <div class="row no-gutters justify-content-between">
+        <div class="col-4">
+          <a class="btn btn-success col-auto" [routerLink]="['/']">Back to Movies</a>
+        </div>
+        <div class="col-4">
+          <a class="btn btn-info col-auto" [ngClass]="{'isDisabled' : displayTotalAmount === 0}" (click)="checkOutAlert()" >Check Out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

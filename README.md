@@ -1,27 +1,25 @@
 # BoostMovie
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.10.
+BoostMovie is a Shopping Cart for movie DVDs.
 
 ## Development server
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.10.
+Run `ng serve` for a dev server.
+Navigate to `http://localhost:4200/`.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Features
+1. Homepage displays DVDs on the page in a table grid. Each item displays item photo, name and the price.
+2. Homepage implements pagination displaying 8 items at a time.
+3. User is able to search for the item by item name.
+4. User is able to click on the item and see a movie detail page.
+5. User is able to select a quantity and add item to the shopping cart.
+6. User is able to click icon cart on the home page and see shopping cart content.
+7. User is able to remove items from the shopping cart or change items quantity.
+8. Shopping cart displays and updates total amount based on items quantity and price.
 
-## Code scaffolding
+## Dependencies
+Element design: Material Design for Bootstrap (Angular version) : https://mdbootstrap.com/docs/angular/ 
+Pagination: ngx-pagination: solution for pagination in Angular : https://www.npmjs.com/package/ngx-pagination 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

@@ -1,0 +1,6 @@
+<form class="form-inline my-2 my-lg-0 ml-auto">
+  <input mdbInput type="text" class="form-control" placeholder="quantity" aria-label="Quantity" ngModel
+         (ngModelChange)="movie.quantity = $event"
+         name="quantity">
+  <button type="button" class="btn btn-info btn-sm my-2 my-sm-0 ml-3" (click)="sentToCart(movie.quantity, movie.id)">Send to Cart</button>
+</form>
