@@ -5,9 +5,9 @@ BoostMovie is a Shopping Cart for movie DVDs.
 ![myimage-alt-tag](https://github.com/ogm710811/BoostMovie/blob/master/src/assets/images/BoostMovie%20Homepage.png)
 
 ## Development server
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.10.
-Run `ng serve` for a dev server.
-Navigate to `http://localhost:4200/`.
+- This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.10.
+- Run `ng serve` for a dev server.
+- Navigate to `http://localhost:4200/`.
 
 ## Features
 1. Homepage displays DVDs on the page in a table grid. Each item displays item photo, name and the price.
