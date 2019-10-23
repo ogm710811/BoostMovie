@@ -26,12 +26,17 @@
   <div class="row mt-2">
     <div *ngFor="let i of movies | async | paginate: config" class="col-sm-3 mb-3 mb-md-0 pb-2">
       <div class="card w-100 text-center border-info">
-        <div class="card-header">
-          <img class="card__image--fluid" src="../assets/images/movie_2.jpg" alt="Card image cap">
+        <div class="card-header" *ngIf="i.url.includes('assets'); else noImageAvailable">
+          <img class="card__image--fluid" [src]="i.url" alt="Card image cap">
         </div>
+        <ng-template #noImageAvailable>
+          <div class="card-header">
+            <img class="card__image--fluid" src="../../assets/template/movie_1.jpg" alt="Card image cap">
+          </div>
+        </ng-template>
         <div class="card-body">
           <h6 class="card-title"><a class="cyan-text" [routerLink]="['movie', i.id]">{{i.title}}</a></h6>
-          <p class="card-text">{{i.price | currency}}</p>
+          <p class="card-text red-text">{{i.price | currency}}</p>
         </div>
         <div class="card-footer text-muted">
           <app-quantity-form [movie]="i"></app-quantity-form>

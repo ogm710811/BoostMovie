@@ -16,10 +16,12 @@
               <tr *ngFor="let movie of movieList; let id = index">
                 <td>{{movie.title}}</td>
                 <td>{{movie.price | currency}}</td>
-                <td>
-                  <span contenteditable="true" (blur)="updateQuantity(movie.id, 'quantity', $event)">
-                    {{movie.quantity}}
-                  </span>
+                <td class="text-center">
+                  <div class="table__quantity-data--border">
+                    <span contenteditable="true" (blur)="updateQuantity(movie.id, 'quantity', $event)">
+                      {{movie.quantity}}
+                    </span>
+                  </div>
                 </td>
                 <td>{{(movie.quantity * movie.price) | currency}}</td>
                 <td>
